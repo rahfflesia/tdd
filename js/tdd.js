@@ -24,4 +24,15 @@ const calculator = {
   },
 };
 
-module.exports = { capitalize, reverseString, calculator };
+function caesarCypher(string, offset) {}
+
+function analyzeArray(array) {
+  return {
+    average: array.reduce((acc, curr) => acc + curr, 0) / array.length,
+    min: Math.min(...array),
+    max: Math.max(...array),
+    length: array.length,
+  };
+}
+
+module.exports = { capitalize, reverseString, calculator, analyzeArray };
