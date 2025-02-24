@@ -76,3 +76,30 @@ test("Divide", () => {
 });
 
 // Analyze array function tests
+test("Test 1 analyze array", () => {});
+
+// Caesar cipher tests
+test("Test 1", () => {
+  expect(mod.caesarCipher("Hello, world!", 3)).toMatch("Khoor, zruog!");
+});
+
+test("Test 2", () => {
+  expect(mod.caesarCipher("xyz", 3)).toMatch("abc");
+});
+
+test("Test 3", () => {
+  "";
+  expect(mod.caesarCipher("banana", 10)).toMatch("lkxkxk");
+});
+
+test("Test 4", () => {
+  expect(mod.caesarCipher("carlos soto", 13)).toMatch("pneybf fbgb");
+});
+
+test("Null test", () => {
+  expect(mod.caesarCipher("Hello, world!", 100)).toBeNull();
+});
+
+test("Non alphabet characters test", () => {
+  expect(mod.caesarCipher("123@@@@@....", 20)).toMatch("123@@@@@....");
+});
