@@ -64,19 +64,28 @@ function getNewAlphabet(offset) {
 function caesarCipher(string, offset) {
   let alphabet = "abcdefghijklmnopqrstuvwxyz";
   let newAlphabet = getNewAlphabet(offset);
+  let lowerCaseString = string.toLowerCase();
 
   if (newAlphabet === null) return null;
 
   let cipherText = "";
-  for (let i = 0; i < string.length; i++) {
-    const charPos = [...alphabet].indexOf(string[i]);
-    if (!find(string[i], newAlphabet)) {
-      cipherText += string[i];
+  for (let i = 0; i < lowerCaseString.length; i++) {
+    const charPos = [...alphabet].indexOf(lowerCaseString[i]);
+    if (!find(lowerCaseString[i], newAlphabet)) {
+      cipherText += lowerCaseString[i];
     } else {
       cipherText += newAlphabet[charPos];
     }
   }
-  return cipherText;
+
+  let caseCipher = "";
+  for (let i = 0; i < string.length; i++) {
+    isUpper(string[i])
+      ? (caseCipher += cipherText[i].toUpperCase())
+      : (caseCipher += cipherText[i]);
+  }
+
+  return caseCipher;
 }
 
 module.exports = {
